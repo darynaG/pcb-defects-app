@@ -1,10 +1,14 @@
 import os
+
+import cv2
+import numpy as np
 from flask import request, jsonify
 from classifier import *
-from image_differencing import *
+from image_differencing import difference_images, extract_pcb_defects_with_contours, \
+    extract_dark_pcb_defects_with_contours
 
 
-def remove_diff_img():
+def remove_diff_images():
     os.system('rm diff_img/*')
 
 
@@ -19,12 +23,13 @@ def count_contours(path):
 
 
 my_operations = {
-    "image_differencing" : image_differencing,
-    "extract_defects_using_contours" : extract_defects_using_contours,
-    "remove_diff_img" : remove_diff_img,
-    "remove_contours" : remove_contours,
-    "count_contours" : count_contours,
+    "difference_images": difference_images,
+    "extract_pcb_defects_with_contours": extract_pcb_defects_with_contours,
+    "remove_diff_images": remove_diff_images,
+    "remove_contours": remove_contours,
+    "count_contours": count_contours,
     "predict": predict,
+    "extract_dark_pcb_defects_with_contours": extract_dark_pcb_defects_with_contours
 }
 
 
@@ -39,3 +44,4 @@ def request_return():
         return(jsonify(res))
     except ValueError:
         return(ValueError)
+

@@ -1,7 +1,4 @@
-from flask import Flask, request, jsonify
-import json
-from image_differencing import *
-from classifier import *
+from flask import Flask
 from utility import *
 from flask_cors import CORS
 

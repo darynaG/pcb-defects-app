@@ -1,15 +1,4 @@
-# *************** PYTHON FUNCTIONS *******************
-
-# import libraries
-import PIL
-from PIL.Image import Image
-from fastai.vision.core import PILImage
 from fastai.learner import load_learner
-import json
-
-from fastai.vision.core import load_image
-from fastai.vision import *
-import torchvision.transforms as T
 
 def classifier(image_path):
     learn = load_learner('model/export.pkl')

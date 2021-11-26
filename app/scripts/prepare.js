@@ -120,7 +120,7 @@ az.add_button("banner_layout_cells", 1, {
 })
 az.add_button("banner_layout_cells", 1, {
     "this_class": "option_butts",
-    "text": "RUN PIPELINE"
+    "text": "RUN"
 })
 az.style_button("option_butts", 1, {
     "background": "gold",
@@ -179,38 +179,38 @@ az.style_layout("loading_layout", 1, {
     "position": "absolute",
     "border": 0
 })
-az.add_icon("banner_layout_cells", 3, {
-    "this_class": "settings_icon",
-    "icon_class": "fa-cog"
-})
-az.style_icon("settings_icon", 1, {
-    "color": "white",
-    "float": "right",
-    "font-size": "30px",
-    "cursor": "pointer"
-})
-az.add_event("settings_icon", 1, {
-    "type": "click",
-    "function": function() {
-        pop_settings()
-    }
-})
+// az.add_icon("banner_layout_cells", 3, {
+//     "this_class": "settings_icon",
+//     "icon_class": "fa-cog"
+// })
+// az.style_icon("settings_icon", 1, {
+//     "color": "white",
+//     "float": "right",
+//     "font-size": "30px",
+//     "cursor": "pointer"
+// })
+// az.add_event("settings_icon", 1, {
+//     "type": "click",
+//     "function": function() {
+//         pop_settings()
+//     }
+// })
 az.add_layout("my_sections", 2, {
     "this_class": "tally_layout",
     "row_class": "tally_layout_rows",
     "cell_class": "tally_layout_cells",
-    "number_of_rows": 3,
+    "number_of_rows": 6,
     "number_of_columns": 3
 })
 az.style_layout("tally_layout", 1, {
     "width": "100%",
-    "height": "150px",
+    "height": "fit",
     "align": "center",
     "margin-top": "10px",
     "column_widths": ['10%', '80%', '10%'],
     "border": 1
 })
-az.hold_value.defects = ['SPUR', 'SPURIOUS', 'SHORT']
+az.hold_value.defects = ['SPUR', 'SPURIOUS', 'SHORT', 'OPEN', 'MOUSEBITE', 'PIN-HOLE'];
 az.call_multiple({
     "iterations": az.hold_value.defects.length,
     "function": function(elem, index) {

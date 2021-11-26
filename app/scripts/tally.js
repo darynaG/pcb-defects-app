@@ -1,7 +1,10 @@
 az.hold_value.defect_cost_totals = {
     "spur": [],
     "spurious": [],
-    "short": []
+    "short": [],
+    "open": [],
+    "mousebite": [],
+    "pinhole": []
 }
 
 function add_tally(types) {
@@ -13,7 +16,7 @@ function add_tally(types) {
         az.empty_contents('tally_layout_cells', 3)
         az.add_text("tally_layout_cells", 3, {
             "this_class": "defect_cost",
-            "text": "$" + az.hold_value.defect_cost_totals.spur.reduce((a, b) => a + b, 0)
+            "text": (az.hold_value.defect_cost_totals.spur.length == 1) ? az.hold_value.defect_cost_totals.spur.length + " defect" : az.hold_value.defect_cost_totals.spur.length + " defects"
         })
     }
     if (types.type == 'spurious') {
@@ -24,7 +27,7 @@ function add_tally(types) {
         az.empty_contents('tally_layout_cells', 6)
         az.add_text("tally_layout_cells", 6, {
             "this_class": "defect_cost",
-            "text": "$" + az.hold_value.defect_cost_totals.spurious.reduce((a, b) => a + b, 0)
+            "text": (az.hold_value.defect_cost_totals.spurious.length == 1) ? az.hold_value.defect_cost_totals.spurious.length + " defect" : az.hold_value.defect_cost_totals.spurious.length + " defects"
         })
     }
     if (types.type == 'short') {
@@ -35,7 +38,40 @@ function add_tally(types) {
         az.empty_contents('tally_layout_cells', 9)
         az.add_text("tally_layout_cells", 9, {
             "this_class": "defect_cost",
-            "text": "$" + az.hold_value.defect_cost_totals.short.reduce((a, b) => a + b, 0)
+            "text": (az.hold_value.defect_cost_totals.short.length == 1) ? az.hold_value.defect_cost_totals.short.length + " defect" : az.hold_value.defect_cost_totals.short.length + " defects"
+        })
+    }
+    if (types.type == 'open') {
+        az.add_html("tally_layout_cells", 8, {
+            "html": "<div class='added_tally'></div>"
+        })
+        az.hold_value.defect_cost_totals.open.push(az.hold_value.hold_open_value)
+        az.empty_contents('tally_layout_cells', 9)
+        az.add_text("tally_layout_cells", 9, {
+            "this_class": "defect_cost",
+            "text": (az.hold_value.defect_cost_totals.open.length == 1) ? az.hold_value.defect_cost_totals.open.length + " defect" : az.hold_value.defect_cost_totals.open.length + " defects"
+        })
+    }
+    if (types.type == 'mousebite') {
+        az.add_html("tally_layout_cells", 8, {
+            "html": "<div class='added_tally'></div>"
+        })
+        az.hold_value.defect_cost_totals.mousebite.push(az.hold_value.hold_mousebite_value)
+        az.empty_contents('tally_layout_cells', 9)
+        az.add_text("tally_layout_cells", 9, {
+            "this_class": "defect_cost",
+            "text": (az.hold_value.defect_cost_totals.mousebite.length == 1) ? az.hold_value.defect_cost_totals.mousebite.length + " defect" : az.hold_value.defect_cost_totals.mousebite.length + " defects"
+        })
+    }
+    if (types.type == 'pinhole') {
+        az.add_html("tally_layout_cells", 8, {
+            "html": "<div class='added_tally'></div>"
+        })
+        az.hold_value.defect_cost_totals.pinhole.push(az.hold_value.hold_pinhole_value)
+        az.empty_contents('tally_layout_cells', 9)
+        az.add_text("tally_layout_cells", 9, {
+            "this_class": "defect_cost",
+            "text": (az.hold_value.defect_cost_totals.pinhole.length == 1) ? az.hold_value.defect_cost_totals.pinhole.length + " defect" : az.hold_value.defect_cost_totals.pinhole.length + " defects"
         })
     }
     az.all_style_html("added_tally", {
