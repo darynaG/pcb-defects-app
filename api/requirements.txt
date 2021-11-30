@@ -1,5 +1,5 @@
 flask
 opencv-python-headless
 git+https://github.com/sean-mcclure/tetryon_ai.git
-fastai
+fastai==2.5.3
 flask_cors

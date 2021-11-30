@@ -78,6 +78,9 @@ function pop_settings() {
                 az.set_slider_value('settings_sliders', 1, az.hold_value.hold_spur_value)
                 az.set_slider_value('settings_sliders', 2, az.hold_value.hold_spurious_value)
                 az.set_slider_value('settings_sliders', 3, az.hold_value.hold_short_value)
+                az.set_slider_value('settings_sliders', 4, az.hold_value.hold_open_value)
+                az.set_slider_value('settings_sliders', 5, az.hold_value.hold_mousebite_value)
+                az.set_slider_value('settings_sliders', 6, az.hold_value.hold_pinhole_value)
             }
             az.all_style_slider("settings_sliders", {
                 "align": "center"
@@ -95,6 +98,9 @@ function pop_settings() {
             az.hold_value.hold_spur_value = Number(az.grab_value('settings_sliders', 1))
             az.hold_value.hold_spurious_value = Number(az.grab_value('settings_sliders', 2))
             az.hold_value.hold_short_value = Number(az.grab_value('settings_sliders', 3))
+            az.hold_value.hold_open_value = Number(az.grab_value('settings_sliders', 4))
+            az.hold_value.hold_mousebite_value = Number(az.grab_value('settings_sliders', 5))
+            az.hold_value.hold_pinhole_value = Number(az.grab_value('settings_sliders', 6))
         }
     })
 }

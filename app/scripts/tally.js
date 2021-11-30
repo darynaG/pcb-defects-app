@@ -42,34 +42,34 @@ function add_tally(types) {
         })
     }
     if (types.type == 'open') {
-        az.add_html("tally_layout_cells", 8, {
+        az.add_html("tally_layout_cells", 11, {
             "html": "<div class='added_tally'></div>"
         })
         az.hold_value.defect_cost_totals.open.push(az.hold_value.hold_open_value)
-        az.empty_contents('tally_layout_cells', 9)
-        az.add_text("tally_layout_cells", 9, {
+        az.empty_contents('tally_layout_cells', 12)
+        az.add_text("tally_layout_cells", 12, {
             "this_class": "defect_cost",
             "text": (az.hold_value.defect_cost_totals.open.length == 1) ? az.hold_value.defect_cost_totals.open.length + " defect" : az.hold_value.defect_cost_totals.open.length + " defects"
         })
     }
     if (types.type == 'mousebite') {
-        az.add_html("tally_layout_cells", 8, {
+        az.add_html("tally_layout_cells", 14, {
             "html": "<div class='added_tally'></div>"
         })
         az.hold_value.defect_cost_totals.mousebite.push(az.hold_value.hold_mousebite_value)
-        az.empty_contents('tally_layout_cells', 9)
-        az.add_text("tally_layout_cells", 9, {
+        az.empty_contents('tally_layout_cells', 15)
+        az.add_text("tally_layout_cells", 15, {
             "this_class": "defect_cost",
             "text": (az.hold_value.defect_cost_totals.mousebite.length == 1) ? az.hold_value.defect_cost_totals.mousebite.length + " defect" : az.hold_value.defect_cost_totals.mousebite.length + " defects"
         })
     }
     if (types.type == 'pinhole') {
-        az.add_html("tally_layout_cells", 8, {
+        az.add_html("tally_layout_cells", 17, {
             "html": "<div class='added_tally'></div>"
         })
         az.hold_value.defect_cost_totals.pinhole.push(az.hold_value.hold_pinhole_value)
-        az.empty_contents('tally_layout_cells', 9)
-        az.add_text("tally_layout_cells", 9, {
+        az.empty_contents('tally_layout_cells', 18)
+        az.add_text("tally_layout_cells", 18, {
             "this_class": "defect_cost",
             "text": (az.hold_value.defect_cost_totals.pinhole.length == 1) ? az.hold_value.defect_cost_totals.pinhole.length + " defect" : az.hold_value.defect_cost_totals.pinhole.length + " defects"
         })

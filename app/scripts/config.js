@@ -1,3 +1,3 @@
 az.hold_value.config = {
-    api_url : "http://0.0.0.0:5050"
+    api_url : "http://0.0.0.0:5070"
 }
