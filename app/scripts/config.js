@@ -1,3 +1,3 @@
 az.hold_value.config = {
-    api_url : "http://0.0.0.0:5070"
+    api_url : "https://black-sloth-p834perr.ws-eu20.gitpod.io/"
 }
