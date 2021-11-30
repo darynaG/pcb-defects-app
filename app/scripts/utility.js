@@ -29,7 +29,7 @@ function stop_load_display() {
 }
 
 az.read_local_file({
-    "file_path" : "../../test_temps/test_temps.json",
+    "file_path" : "pcb-defects-app/test_temps/test_temps.json",
     "done" : function(data) {
         az.hold_value.test_temps = Object.keys(data)
     }
